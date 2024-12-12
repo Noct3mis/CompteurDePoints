@@ -8,7 +8,7 @@ const client = mqtt.connect("ws://35.183.155.93:8083", {
     console.log("Connected to MQTT broker");
     client.subscribe(topic, (err) => {
       if (!err) {
-        client.publish(topic, "Yo Oualid");
+        client.publish(topic, "Web Page connected");
       }
     });
   });

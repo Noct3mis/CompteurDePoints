@@ -1,0 +1,17 @@
+.title {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+}
+
+.compteur {
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.points-team1, .points-team2 {
+    display: flex;
+    justify-content: center;
+}
