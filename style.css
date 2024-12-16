@@ -1,17 +1,119 @@
-.title {
+/* Styles généraux */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Noto Sans JP', sans-serif;
+    color: #fff;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    width: 100%;
+    height: 100vh;
+    background: url(images/haikyuuWallpaper.jpg) no-repeat center center/cover;
+    backdrop-filter: blur(5px);
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.7);
+}
+
+.title h1 {
+    font-size: 3rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    color: #ffab4c;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
+    margin-bottom: 20px;
+    animation: fadeIn 1.2s ease;
 }
 
 .compteur {
     display: flex;
-    justify-content: space-evenly;
+    justify-content: space-around;
+    align-items: center;
+    background: rgba(0, 0, 0, 0.6);
+    border: 2px solid #ffab4c;
+    border-radius: 15px;
+    padding: 20px;
+    width: 90%;
+    max-width: 600px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+    animation: slideIn 1s ease;
+}
+
+.team1, .team2 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    flex: 1;
+    text-transform: uppercase;
+}
+
+.team1 h2, .team2 h2 {
+    font-size: 1.5rem;
+    color: #ffab4c;
+    margin: 0 0 10px;
 }
 
 .points-team1, .points-team2 {
-    display: flex;
-    justify-content: center;
+    font-size: 3rem;
+    font-weight: bold;
+    color: #fff;
+    background: rgba(0, 0, 0, 0.8);
+    border-radius: 10px;
+    padding: 10px 20px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.7);
+    transition: transform 0.3s ease;
+}
+
+.points-team1:hover, .points-team2:hover {
+    transform: scale(1.1);
+}
+
+.result {
+    margin-top: 30px;
+    font-size: 2rem;
+    font-weight: bold;
+    color: #ffab4c;
+    text-align: center;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
+    animation: resultBounce 1s ease-in-out;
+    padding: 10px 20px;
+    border: 2px solid #ffab4c;
+    background: rgba(0, 0, 0, 0.6);
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+    width: fit-content;
+}
+
+@keyframes resultBounce {
+    0% {
+        transform: scale(0.5);
+        opacity: 0;
+    }
+    60% {
+        transform: scale(1.1);
+        opacity: 1;
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translateY(50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@media (max-width: 768px) {
+    .compteur {
+        flex-direction: column;
+    }
+
+    .points-team1, .points-team2 {
+        font-size: 2rem;
+    }
 }
